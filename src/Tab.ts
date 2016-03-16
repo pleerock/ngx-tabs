@@ -1,4 +1,5 @@
-import {Component, Input} from "angular2/core";
+import {Component, Input, ContentChild, TemplateRef} from "angular2/core";
+import {TabHeading} from "./TabHeading";
 
 @Component({
     selector: "tab",
@@ -6,10 +7,20 @@ import {Component, Input} from "angular2/core";
 })
 export class Tab {
 
+    @ContentChild(TabHeading)
+    heading: TabHeading;
+
     @Input()
     title: string;
 
     @Input()
-    active: boolean = false;
+    active = false;
+
+    @Input()
+    disabled = false;
+
+    get headingTemplate(): TemplateRef {
+        return this.heading ? this.heading.templateRef : null;
+    };
 
 }

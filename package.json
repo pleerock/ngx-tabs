@@ -1,13 +1,13 @@
 {
   "name": "ng2-tabs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple tabs control for your angular2 applications using bootstrap3.",
   "license": "Apache-2.0",
   "readmeFilename": "README.md",
   "private": true,
   "author": {
     "name": "Umed Khudoiberdiev",
-    "email": "zarrhost@gmail.com"
+    "email": "pleerock.me@gmail.com"
   },
   "repository": {
     "type": "git",
