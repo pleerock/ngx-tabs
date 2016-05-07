@@ -1,4 +1,4 @@
-import {ContentChildren, Component, QueryList, Input, AfterContentInit, EventEmitter, Output} from "angular2/core";
+import {ContentChildren, Component, QueryList, Input, AfterContentInit, EventEmitter, Output} from "@angular/core";
 import {Tab} from "./Tab";
 import {TabTransclude} from "./TabTransclude";
 
@@ -7,7 +7,7 @@ import {TabTransclude} from "./TabTransclude";
     template: `
 <div class="tabset">
     <ul class="nav" [ngClass]="{ 'nav-tabs': !pills, 'nav-pills': pills }">
-      <li role="presentation" *ngFor="#tab of tabs" [class.active]="tab.active">
+      <li role="presentation" *ngFor="let tab of tabs" [class.active]="tab.active">
         <a (click)="changeActiveTab(tab)" class="btn" [class.disabled]="tab.disabled">
             <span [tabTransclude]="tab.headingTemplate">{{tab.title}}</span>
         </a>

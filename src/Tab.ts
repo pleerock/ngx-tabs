@@ -1,4 +1,4 @@
-import {Component, Input, ContentChild, TemplateRef} from "angular2/core";
+import {Component, Input, ContentChild, TemplateRef} from "@angular/core";
 import {TabHeading} from "./TabHeading";
 
 @Component({
@@ -19,7 +19,7 @@ export class Tab {
     @Input()
     disabled = false;
 
-    get headingTemplate(): TemplateRef {
+    get headingTemplate(): TemplateRef<any> {
         return this.heading ? this.heading.templateRef : null;
     };
 
