@@ -4,7 +4,22 @@ Simple tabs control for your angular2 applications using bootstrap3. Does not de
 
 ## Installation
 
+1. Install npm module:
+
 `npm install ng2-tabs --save`
+
+2. If you are using system.js you may want to add this into `map` and `package` config:
+
+```json
+{
+    "map": {
+        "ng2-tabs": "node_modules/ng2-tabs"
+    },
+    "packages": {
+        "ng2-tabs": { "main": "index.js", "defaultExtension": "js" }
+    }
+}
+```
 
 ## Usage
 
@@ -31,8 +46,8 @@ Simple tabs control for your angular2 applications using bootstrap3. Does not de
 ## Sample
 
 ```typescript
-import {Component} from "angular2/core";
-import {TAB_DIRECTIVES} from "ng2-tabs/ng2-tabs";
+import {Component} from "@angular/core";
+import {TAB_DIRECTIVES} from "ng2-tabs";
 
 @Component({
     selector: "app",

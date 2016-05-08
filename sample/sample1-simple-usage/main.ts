@@ -1,6 +1,6 @@
 import {bootstrap} from "@angular/platform-browser-dynamic";
 import {Component} from "@angular/core";
-import {TAB_DIRECTIVES} from "../../src/ng2-tabs";
+import {TAB_DIRECTIVES} from "../../src/index";
 
 @Component({
     selector: "app",
