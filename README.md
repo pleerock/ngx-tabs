@@ -1,6 +1,8 @@
 # ng2-tabs
 
 Simple tabs control for your angular2 applications using bootstrap3. Does not depend of jquery.
+If you don't want to use it without bootstrap - simply create proper css classes. 
+Please star a project if you liked it, or create an issue if you have problems with it.
 
 ## Installation
 
