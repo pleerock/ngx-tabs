@@ -25,7 +25,7 @@ Please star a project if you liked it, or create an issue if you have problems w
 
 ## Usage
 
-```typescript
+```html
 <tabset [pills]="false" (onSelect)="doSomethingOnTabSelect($event)">
     <tab title="Tab title" [disabled]="false">
         <span *tabHeading>
