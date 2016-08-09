@@ -55,12 +55,21 @@ import {TAB_DIRECTIVES} from "../../src/index";
             Content of the Map Tab
         </tab>
     </tabset>
+    
+    <!-- tabs in ng-repeat -->
+    <tabset [pills]="true">
+        <tab [title]="tab" *ngFor="let tab of tabs">
+            {{ tab }}
+        </tab>
+    </tabset>
 
 </div>
 `,
     directives: [TAB_DIRECTIVES]
 })
 export class Sample1App {
+
+    tabs: string[] = ["Home", "About me", "Contacts", "Map"];
 
 }
 

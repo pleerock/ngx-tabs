@@ -42,10 +42,12 @@ export class Tabset implements AfterContentInit {
     }
 
     ngAfterContentInit() {
-        const readTabs = this.tabs.toArray();
-        const activeTab = readTabs.find(tab => tab.active === true);
-        if (!activeTab && readTabs.length > 0)
-            readTabs[0].active = true;
+        setTimeout(() => { // timeout is a monkey patch that fixes issue when tab are used with ngRepeat
+            const readTabs = this.tabs.toArray();
+            const activeTab = readTabs.find(tab => tab.active === true);
+            if (!activeTab && readTabs.length > 0)
+                readTabs[0].active = true;
+        });
     }
 
 }
