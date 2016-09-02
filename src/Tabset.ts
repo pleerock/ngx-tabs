@@ -18,10 +18,7 @@ import {TabTransclude} from "./TabTransclude";
         <ng-content></ng-content>    
     </div>
 </div>
-`,
-    directives: [
-        TabTransclude
-    ]
+`
 })
 export class Tabset implements AfterContentInit {
 

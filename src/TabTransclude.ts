@@ -1,26 +1,24 @@
-import {Directive, TemplateRef, ViewContainerRef} from "@angular/core";
+import {Directive, TemplateRef, ViewContainerRef, Input} from "@angular/core";
 
 @Directive({
-    selector: "[tabTransclude]",
-    properties: [
-        "tabTransclude"
-    ]
+    selector: "[tabTransclude]"
 })
 export class TabTransclude {
-    
-    private _tabTransclude: TemplateRef<any>;
+
+    _tabTransclude: TemplateRef<any>;
 
     constructor(public viewRef: ViewContainerRef) {
     }
 
-    private set tabTransclude(templateRef: TemplateRef<any>) {
+    @Input()
+    set tabTransclude(templateRef: TemplateRef<any>) {
         this._tabTransclude = templateRef;
         if (templateRef) {
             this.viewRef.createEmbeddedView(templateRef);
         }
     }
 
-    private get tabTransclude() {
+    get tabTransclude() {
         return this._tabTransclude;
     }
 
