@@ -25,6 +25,8 @@ Please star a project if you liked it, or create an issue if you have problems w
 
 ## Usage
 
+Import `TabsModule` in your app and start using a component:
+
 ```html
 <tabset [pills]="false" (onSelect)="doSomethingOnTabSelect($event)">
     <tab title="Tab title" [disabled]="false">
@@ -49,7 +51,7 @@ Please star a project if you liked it, or create an issue if you have problems w
 
 ```typescript
 import {Component} from "@angular/core";
-import {TAB_DIRECTIVES} from "ng2-tabs";
+import {TabsModule} from "ng2-tabs";
 
 @Component({
     selector: "app",
@@ -106,10 +108,25 @@ import {TAB_DIRECTIVES} from "ng2-tabs";
     </tabset>
 
 </div>
-`,
-    directives: [TAB_DIRECTIVES]
+`
 })
 export class App {
+
+}
+
+@NgModule({
+    imports: [
+        // ...
+        TabsModule
+    ],
+    declarations: [
+        App
+    ],
+    bootstrap: [
+        App
+    ]
+})
+export class AppModule {
 
 }
 ```
