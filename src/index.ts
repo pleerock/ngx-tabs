@@ -8,6 +8,7 @@ import {TabTransclude} from "./TabTransclude";
 export * from "./Tab";
 export * from "./Tabset";
 export * from "./TabHeading";
+export * from "./TabTransclude";
 
 @NgModule({
     imports: [

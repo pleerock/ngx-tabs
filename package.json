@@ -1,6 +1,6 @@
 {
   "name": "ng2-tabs",
-  "version": "0.0.9",
+  "version": "0.0.11",
   "description": "Simple tabs control for your angular2 applications using bootstrap3.",
   "license": "MIT",
   "readmeFilename": "README.md",
