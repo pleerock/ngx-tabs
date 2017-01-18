@@ -1,4 +1,4 @@
-# ng2-tabs
+# ngx-tabs
 
 Simple tabs control for your angular2 applications using bootstrap3. Does not depend of jquery.
 If you don't want to use it without bootstrap - simply create proper css classes. 
@@ -8,17 +8,17 @@ Please star a project if you liked it, or create an issue if you have problems w
 
 1. Install npm module:
     
-    `npm install ng2-tabs --save`
+    `npm install ngx-tabs --save`
 
 2. If you are using system.js you may want to add this into `map` and `package` config:
     
     ```json
     {
         "map": {
-            "ng2-tabs": "node_modules/ng2-tabs"
+            "ngx-tabs": "node_modules/ngx-tabs"
         },
         "packages": {
-            "ng2-tabs": { "main": "index.js", "defaultExtension": "js" }
+            "ngx-tabs": { "main": "index.js", "defaultExtension": "js" }
         }
     }
     ```
@@ -51,7 +51,7 @@ Import `TabsModule` in your app and start using a component:
 
 ```typescript
 import {Component} from "@angular/core";
-import {TabsModule} from "ng2-tabs";
+import {TabsModule} from "ngx-tabs";
 
 @Component({
     selector: "app",
@@ -131,5 +131,5 @@ export class AppModule {
 }
 ```
 
-Take a look on samples in [./sample](https://github.com/pleerock/ng2-tabs/tree/master/sample) for more examples of
+Take a look on samples in [./sample](https://github.com/pleerock/ngx-tabs/tree/master/sample) for more examples of
 usages.
