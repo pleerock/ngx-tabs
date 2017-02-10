@@ -29,7 +29,7 @@ Import `TabsModule` in your app and start using a component:
 
 ```html
 <tabset [pills]="false" (onSelect)="doSomethingOnTabSelect($event)">
-    <tab title="Tab title" [disabled]="false">
+    <tab title="Tab title" [disabled]="false" [active]="true">
         <span *tabHeading>
             <b style="color: deepskyblue">Dynamic html</b> <i style="color: deeppink">tab heading</i>
         </span>
@@ -45,7 +45,8 @@ Import `TabsModule` in your app and start using a component:
 * `<tab>` is a single tab item
     * `title` Simple tab title
     * `[disabled]="true|false` Indicates if current tab is enabled or disabled
-    * `<span *tabHeading>...</span>` Allows to specify dynamic html content of the tab title 
+    * `<span *tabHeading>...</span>` Allows to specify dynamic html content of the tab title
+    * `[active]="true|false"` Specifies which tab should be active on init. By deafult the first tab will be active
 
 ## Sample
 
