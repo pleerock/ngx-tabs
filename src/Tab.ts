@@ -1,9 +1,28 @@
 import {Component, Input, ContentChild, TemplateRef} from "@angular/core";
 import {TabHeading} from "./TabHeading";
 
+import { trigger, style, animate, state, transition } from '@angular/core';
+
 @Component({
     selector: "tab",
-    template: `<ng-content *ngIf="active"></ng-content>`
+    template: `
+      <div class="modal" [@tabActive]="'active'" *ngIf="active">
+        <ng-content ></ng-content>
+      </div>`,
+    animations: [
+      trigger('tabActive', [
+        state('active', style({transform: 'translateX(0%)'})),
+        state('void', style({transform: 'translateX(-100%)'})),
+        transition('* => void', [
+          animate('3000ms ease-out')
+        ]),
+        transition(
+          'void => *', [
+          style({transform: 'translateX(100%)'}),
+          animate('3000ms ease-in')
+        ]),
+      ]),
+    ]
 })
 export class Tab {
 

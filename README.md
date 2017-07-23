@@ -44,6 +44,9 @@ Import `TabsModule` in your app and start using a component:
 * `<tabset>` is a container for all tabs
     * `[pills]="true|false"` Specifies if bootstrap pills should be used instead of regular tabs
     * `(onSelect)="doSomethingOnTabSelect($event)"` Callback to be called when tab is being selected
+    * `(onInit)="doSomethingOnInit($event)"` Callback to be called when component has been initialised
+    * `(onChange)="doSomethingOnChange($changes)"` Callback to be called the component is changed
+
 * `<tab>` is a single tab item
     * `title` Simple tab title
     * `[disabled]="true|false` Indicates if current tab is enabled or disabled

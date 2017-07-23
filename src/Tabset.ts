@@ -1,4 +1,4 @@
-import {ContentChildren, Component, QueryList, Input, AfterContentInit, EventEmitter, Output} from "@angular/core";
+import {ContentChildren, Component, QueryList, Input, AfterContentInit, OnChanges, SimpleChanges, EventEmitter, Output} from "@angular/core";
 import {Tab} from "./Tab";
 import {TabTransclude} from "./TabTransclude";
 
@@ -20,7 +20,7 @@ import {TabTransclude} from "./TabTransclude";
 </div>
 `
 })
-export class Tabset implements AfterContentInit {
+export class Tabset implements AfterContentInit, OnChanges {
 
     @Input()
     pills: boolean;
@@ -30,6 +30,12 @@ export class Tabset implements AfterContentInit {
 
     @Output()
     onSelect = new EventEmitter(false);
+
+    @Output()
+    onInit = new EventEmitter(false);
+
+    @Output()
+    onChange = new EventEmitter(false);
 
     changeActiveTab(tab: Tab) {
         const tabs = this.tabs.toArray();
@@ -44,7 +50,12 @@ export class Tabset implements AfterContentInit {
             const activeTab = readTabs.find(tab => tab.active === true);
             if (!activeTab && readTabs.length > 0)
                 readTabs[0].active = true;
+            this.onInit.emit(readTabs.indexOf(activeTab));
         });
+    }
+
+    ngOnChanges(changes: SimpleChanges) {
+      this.onChange.emit(changes);
     }
 
 }
